@@ -37,9 +37,9 @@ function App() {
                 <About />
               </Route>
 
-              <Route path="/bookings">
+              <PrivateRoute path="/bookings">
                 <Bookings />
-              </Route>
+              </PrivateRoute>
 
               <Route path="/dhakatokalkata">
                 <DhakaToKalkata />
@@ -49,9 +49,9 @@ function App() {
                 <Blogs />
               </Route>
 
-              <Route path="/dashboard">
+              <PrivateRoute path="/dashboard">
                 <Dashboard />
-              </Route>
+              </PrivateRoute>
 
               <Route path="/login">
                 <Login />

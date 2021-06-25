@@ -1,13 +1,12 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import Tickets from "../Tickets/Tickets";
-import SelectedTickets from "../SelectedTickets/SelectedTickets";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SelectedTickets from "../SelectedTickets/SelectedTickets";
+import Tickets from "../Tickets/Tickets";
 
 const Bookings = () => {
   const [tickets, setTickets] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/alltickets")
+    fetch("https://still-taiga-92318.herokuapp.com/alltickets")
       .then((res) => res.json())
       .then((data) => {
         setTickets(data);
@@ -15,7 +14,7 @@ const Bookings = () => {
   }, []);
 
   const [countTicket, setCountTicket] = useState([]);
- 
+
   const handleSelectedTicket = (ticketData) => {
     if (countTicket.indexOf(ticketData) === -1 && countTicket.length < 5) {
       const newCountTicket = [...countTicket, ticketData];
@@ -28,8 +27,7 @@ const Bookings = () => {
   return (
     <div className="container mt-5">
       <div className="py-3">
-      <Link to="/dhakatokalkata">Dhaka to Kalkata</Link>{" "}
-      
+        <Link to="/dhakatokalkata">Dhaka to Kalkata</Link>{" "}
       </div>
       <div className="row ">
         <div className="col-lg-6">

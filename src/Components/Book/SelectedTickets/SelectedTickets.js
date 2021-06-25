@@ -3,13 +3,12 @@ import { useForm } from "react-hook-form";
 import { UserContext } from "../../../App";
 import ProcessPayment from "../../Dashboard/Book/ProcessPayment";
 const SelectedTickets = (props) => {
-  const [pay, setPay ] = useState("d-none");
+  const [pay, setPay] = useState("d-none");
   const countTicket = props.countTicket;
   const SelectedTickets = countTicket.reduce(
     (sum, ticket) => sum + ticket.name + " , ",
     []
   );
-  console.log(SelectedTickets);
   const totalBudget = countTicket.reduce(
     (sum, ticket) => sum + parseInt(ticket.cost),
     0
@@ -34,10 +33,10 @@ const SelectedTickets = (props) => {
       paymentId,
       cost: { totalBudget },
       ticketInfo: countTicket,
-      orderTime: new Date().toDateString()
+      orderTime: new Date().toDateString(),
     };
 
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://still-taiga-92318.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +55,6 @@ const SelectedTickets = (props) => {
       });
   };
   return (
-    
     <div>
       <h6>Dhaka to Kalkata</h6>
       <div className="card p-3 rounded">
@@ -67,7 +65,12 @@ const SelectedTickets = (props) => {
           <p className="card-text">Total Cost: ${totalBudget} </p>
           <p>Selected tickets:</p>
           <p>{SelectedTickets}</p>
-          <button className="btn btn-primary" onClick={()=>setPay(pay ? "d-block" : "d-none")}>Pay Now</button>
+          <button
+            className="btn btn-primary"
+            onClick={() => setPay(pay ? "d-block" : "d-none")}
+          >
+            Pay Now
+          </button>
         </div>
       </div>
       <div className={pay}>

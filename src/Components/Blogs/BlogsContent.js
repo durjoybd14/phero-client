@@ -20,7 +20,12 @@ const BlogsContent = (props) => {
         </Card.Body>
         <Card.Footer className="mt-3 card-footer text-dark d-flex justify-content-around align-items-center">
           <p>
-            <a className="text-decoration-none" href={link} target="_blank" rel="noreferrer">
+            <a
+              className="text-decoration-none"
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className="fa fa-plus-square" aria-hidden="true" /> Read More
             </a>
           </p>

@@ -1,8 +1,6 @@
 import React from "react";
 
 const Tickets = (props) => {
- 
-
   const { name } = props.ticket;
   const handleSelectedTicket = props.handleSelectedTicket;
 

@@ -14,7 +14,7 @@ const AddTickets = () => {
       cost: data.cost,
     };
 
-    const url = `http://localhost:5000/addDhakaToKalkata`;
+    const url = `https://still-taiga-92318.herokuapp.com/addDhakaToKalkata`;
     fetch(url, {
       method: "POST",
       headers: {
